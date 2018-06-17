@@ -1,0 +1,44 @@
+
+                              Series
+                              
+ len(s)  s.head() s.tail()
+ 
+ s.value_counts() # How many times each item appears?
+ 
+ s.sort_index()  s.sort_values()
+ 
+ s.unique() # Number of unique values
+ 
+ s.plot(kind = ); # kind: bar, scatter, area, hist,...
+ 
+ s.isnull()  s.notnull()  s.dropna() 
+ 
+ s.fillna(0)  s.fillna(method='ffill')  s.fillna(method='bfill')
+ 
+ s.str.len() s.str.startswith() 
+ 
+ s.dt.year  s.dt.month  s.dt.day  s.dt.dayofweek
+
+
+                               Dataframe
+                               
+ len(df)  df.head() df.tail() df['COLUMN'] 
+ 
+ df.loc['explicit_index', 'column']
+ 
+ df[df['column'] == value]  df[(df['column1'] >= value) & (df['column2'] < value)]  # Filtering
+ df[(df['column1'] < value) | (df['column2'] != value)] 
+  
+ df.sort_values('column')  df.sort_values(['column1', 'column2'])
+ 
+ df.dropna()   
+ df.dropna(axis = )  # axis: 'columns'(0), 'rows'(1) 
+ 
+ df.fillna(axis = , method = )  # axis: 'columns'(0), 'rows'(1) method: 'ffill', 'bfill'
+ 
+ df.plot(x = 'column1', y = 'column2', kind = )  # kind: bar, scatter, area, hist,...
+ 
+ df.groupby('column')                  .size() .mean() .min() .max()                      
+ df.groupby(['column1', 'column2'])  
+ 
+ df1.merge(df2)
