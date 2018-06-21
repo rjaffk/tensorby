@@ -4,6 +4,7 @@ import warnings
 import matplotlib.pyplot as plt
 import numpy as np
 
+import ipywidgets as widgets
 
 def plot_kmeans_interactive(min_clusters=1, max_clusters=6):
     from ipywidgets import interact
@@ -65,8 +66,10 @@ def plot_kmeans_interactive(min_clusters=1, max_clusters=6):
                 plt.text(3.8, 9.5, "2. Update centroids to cluster means",
                          ha='right', va='top', size=14)
 
-    return interact(_kmeans_step, frame=[0, 50],
-                    n_clusters=[min_clusters, max_clusters])
+    return interact(_kmeans_step, frame=widgets.IntSlider(min=1, max=100, step=1, value=1), 
+                    n_clusters=widgets.IntSlider(min=min_clusters, max=max_clusters, step=1, value=4))
+# interact(_kmeans_step, frame=[0, 50],
+#                     n_clusters=[min_clusters, max_clusters])
 
 
 def plot_image_components(x, coefficients=None, mean=0, components=None,
